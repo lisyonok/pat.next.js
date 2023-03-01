@@ -1,8 +1,13 @@
+import Link from "next/link"
+
 export default function FirstPost({ posts = [] }) {
-  console.log(posts)
+  //console.log(posts)
   return (
     <div>
-      <table class="table table-striped">
+      <Link href="/">
+        TO MAIN
+      </Link>
+      <table className="table table-striped">
         <thead>
           <tr>
             <th>Sr.NO</th>
@@ -13,8 +18,8 @@ export default function FirstPost({ posts = [] }) {
           </tr>
         </thead>
         <tbody>
-          {posts.map((f) => (
-            <tr>
+          {posts.map((f,i) => (
+            <tr key={i}>
               <td>{f.id}</td>
               <td>{f.employee_name}</td>
               <td>{f.employee_salary}</td>
@@ -28,9 +33,9 @@ export default function FirstPost({ posts = [] }) {
   )
 }
 
-export async function getStaticProps() {
-  const res = await fetch("https://dummy.restapiexample.com/api/v1/employees")
-  //console.log(await res.text())
+export async function getServerSideProps() {
+  const res = await fetch("https://e-krit.ru/test.json")
+  console.log('success')
   const posts = await res.json()
   return {
     props: {
