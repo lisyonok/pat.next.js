@@ -1,3 +1,4 @@
-const nextConfig = {
-  output: "standalone"
+module.exports = {
+  // ... rest of the configuration.
+  output: 'standalone',
 }

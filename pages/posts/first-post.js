@@ -33,7 +33,7 @@ export default function FirstPost({ posts = [] }) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch("https://e-krit.ru/test.json")
   console.log('success')
   const posts = await res.json()
