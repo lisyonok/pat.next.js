@@ -18,28 +18,10 @@ export default function FirstPost({ posts = [] }) {
           </tr>
         </thead>
         <tbody>
-          {posts.map((f,i) => (
-            <tr key={i}>
-              <td>{f.id}</td>
-              <td>{f.employee_name}</td>
-              <td>{f.employee_salary}</td>
-              <td>{f.employee_age}</td>
-              <td>{f.profile_image}</td>
-            </tr>
-          ))}
+         
         </tbody>
       </table>
     </div>
   )
 }
 
-export async function getStaticProps() {
-  const res = await fetch("https://e-krit.ru/test.json")
-  console.log('success')
-  const posts = await res.json()
-  return {
-    props: {
-      posts: posts.data
-    }
-  }
-}
