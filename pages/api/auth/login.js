@@ -10,7 +10,7 @@ const InvalidReq = (res) => res.status(400).send({ message: "Invalid req", statu
 const InvalidCred = (res) => res.status(403).send({ message: "Invalid credentials", status: "error" })
 
 const handler = async (req, res) => {
-  //if (!req.method !== "POST") return InvalidReq(res)
+  if (req.method !== "POST") return InvalidReq(res)
   const { name, pass } = req.body
   if (typeof name !== "string" || typeof pass !== "string") return InvalidReq(res)
 

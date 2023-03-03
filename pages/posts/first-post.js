@@ -1,7 +1,6 @@
 import Link from "next/link"
 
 export default function FirstPost({ posts = [] }) {
-  //console.log(posts)
   return (
     <div>
       <Link href="/">

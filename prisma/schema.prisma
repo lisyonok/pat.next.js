@@ -26,3 +26,15 @@ model Session {
   User      User?    @relation(fields: [userId], references: [id])
   userId    String?  @db.ObjectId
 }
+
+model Book {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  author      String
+  genre       String?
+  description String
+  isbn        String
+  image       String
+  published   String
+  publisher   String
+}

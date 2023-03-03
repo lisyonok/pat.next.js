@@ -7,11 +7,10 @@ import routerGuardContext from "../../lib/auth/routerGuardContext"
 function App() {
   const router = useRouter()
   const auth = useContext(routerGuardContext)
-  console.log(auth)
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    if (auth.isAuth) router.push("/")
+    //if (auth.isAuth) router.push("/")
   }, [auth])
 
   const onFinish = async (val) => {
