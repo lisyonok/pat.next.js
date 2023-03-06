@@ -1,5 +1,4 @@
 const { PrismaClient } = require("@prisma/client")
-const crypto = require('crypto')
 
 var bcrypt = require('bcrypt');
 var salt = bcrypt.genSaltSync(10);
@@ -12,7 +11,7 @@ async function main() {
   await prisma.$connect()
   await prisma.user.create({
     data: {
-      name: "Nick",
+      name: "nick",
       email: "nick@mail.ru",
       pass: hash
     }
